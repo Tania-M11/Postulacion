@@ -13,6 +13,8 @@ import android.os.Bundle
 import android.os.Parcel
 import android.util.Log
 import android.util.Patterns
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
 import androidx.activity.SystemBarStyle
 import androidx.activity.enableEdgeToEdge
@@ -498,6 +500,50 @@ class MainActivity : AppCompatActivity() {
         paso1.tilFechaNacimiento.setEndIconOnClickListener { abrirSelectorFecha(paso1.etFechaNacimiento) }
         paso3.tilFechaInicio.setEndIconOnClickListener { abrirSelectorFecha(paso3.etFechaInicio) }
         paso3.tilFechaFin.setEndIconOnClickListener { abrirSelectorFecha(paso3.etFechaFin) }
+
+        listOf(paso1.etFechaNacimiento, paso3.etFechaInicio, paso3.etFechaFin).forEach { campo ->
+            campo.addTextChangedListener(formatearFechaAutomaticamente())
+        }
+    }
+
+    /**
+     * TextWatcher que inserta "/" automáticamente: después de 2 dígitos (día) y después de 2 más (mes).
+     * Limita el largo a 10 caracteres. Si el texto no corresponde a un formato de fecha válido,
+     * deja de formatear (p. ej. si el usuario escribe letras).
+     */
+    private fun formatearFechaAutomaticamente(): TextWatcher = object : TextWatcher {
+        private var isFormatting = false
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {}
+
+        override fun afterTextChanged(editable: Editable?) {
+            if (isFormatting || editable == null) return
+
+            val texto = editable.toString()
+
+            // Extraer solo los dígitos y reconstruir con "/"
+            val digitos = texto.filter { Character.isDigit(it) }
+
+            if (digitos.isEmpty()) return
+
+            isFormatting = true
+
+            val formateado = StringBuilder()
+            for (i in digitos.indices) {
+                if (i == 2 || i == 4) formateado.append("/")
+                formateado.append(digitos[i])
+                if (formateado.length >= 10) break
+            }
+
+            val nuevoTexto = formateado.toString()
+            if (texto != nuevoTexto) {
+                editable.replace(0, texto.length, nuevoTexto)
+            }
+
+            isFormatting = false
+        }
     }
 
     private fun abrirSelectorFecha(campo: TextInputEditText) {
