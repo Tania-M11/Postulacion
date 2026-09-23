@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Oscurece un poco la ilustración, sobre todo la franja clara del horizonte. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <gradient
+        android:angle="270"
+        android:centerColor="@color/velo_centro"
+        android:endColor="@color/velo_abajo"
+        android:startColor="@color/velo_arriba" />
+</shape>

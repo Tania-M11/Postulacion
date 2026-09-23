@@ -1,0 +1,89 @@
+<resources>
+    <string name="app_name">Postulación</string>
+    <string name="titulo_app">Postulación laboral</string>
+    <string name="paso_de">Paso %1$d de %2$d</string>
+
+    <!-- Pasos -->
+    <string name="titulo_paso_personal">Información personal</string>
+    <string name="desc_paso_personal">Cuéntenos quién es y cómo podemos contactarle.</string>
+    <string name="titulo_paso_profesional">Perfil profesional</string>
+    <string name="desc_paso_profesional">Describa su formación y el cargo al que aspira.</string>
+    <string name="titulo_paso_experiencia">Experiencia laboral</string>
+    <string name="desc_paso_experiencia">Indique su experiencia más reciente o relevante.</string>
+    <string name="titulo_paso_motivacion">Motivación</string>
+    <string name="desc_paso_motivacion">Explique con detalle por qué quiere unirse al equipo.</string>
+    <string name="titulo_paso_revision">Revisión</string>
+    <string name="desc_paso_revision">Revise la información antes de enviarla. Puede volver a cualquier paso para corregirla.</string>
+
+    <!-- Campos -->
+    <string name="campo_nombre">Nombre completo</string>
+    <string name="campo_correo">Correo electrónico</string>
+    <string name="campo_telefono">Número de teléfono</string>
+    <string name="campo_ciudad">Ciudad</string>
+    <string name="campo_fecha_nacimiento">Fecha de nacimiento</string>
+    <string name="campo_cargo_aspira">Cargo al que aspira</string>
+    <string name="campo_profesion">Profesión</string>
+    <string name="campo_anios">Años de experiencia</string>
+    <string name="campo_habilidades">Habilidades</string>
+    <string name="ayuda_habilidades">Separe las habilidades con comas</string>
+    <string name="campo_perfil">Perfil profesional</string>
+    <string name="ayuda_perfil">Resuma su trayectoria, fortalezas y logros</string>
+    <string name="campo_empresa">Empresa</string>
+    <string name="campo_cargo_empresa">Cargo</string>
+    <string name="campo_fecha_inicio">Fecha de inicio</string>
+    <string name="campo_fecha_fin">Fecha de finalización</string>
+    <string name="ayuda_fecha_fin">Déjela vacía si aún trabaja allí</string>
+    <string name="campo_funciones">Descripción de funciones y responsabilidades</string>
+    <string name="campo_motivo">¿Por qué desea trabajar en la empresa?</string>
+    <string name="campo_aporte">¿Qué puede aportar a la empresa?</string>
+    <string name="campo_objetivos">¿Cuáles son sus objetivos profesionales?</string>
+    <string name="formato_fecha">dd/mm/aaaa</string>
+    <string name="abrir_calendario">Abrir calendario</string>
+
+    <!-- Navegación -->
+    <string name="anterior">Anterior</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="enviar">Enviar postulación</string>
+    <string name="editar">Editar</string>
+
+    <!-- Temporizador -->
+    <string name="temporizador">Temporizador</string>
+    <string name="tiempo_restante">Tiempo restante</string>
+    <string name="temporizador_pausado">Temporizador en pausa</string>
+    <string name="temporizador_pausa_onpause">Pausado por onPause()</string>
+    <string name="tiempo_agotado">Tiempo agotado</string>
+    <string name="temporizador_detenido">Temporizador detenido</string>
+    <string name="reanudar">Reanudar</string>
+    <string name="reiniciar">Reiniciar</string>
+    <string name="aviso_tiempo_agotado">Se agotó el tiempo. Puede reiniciar el temporizador y continuar.</string>
+
+    <!-- Diálogo de pausa (PausaActivity) -->
+    <string name="dialogo_pausa_titulo">Temporizador en pausa</string>
+    <string name="dialogo_pausa_restante">Quedan %1$s</string>
+    <string name="dialogo_pausa_explicacion">Esta ventana es otra Activity con tema de diálogo. El formulario sigue visible detrás, pero perdió el foco: Android llamó a onPause() y no a onStop(). En onPause() se guardó en memoria un borrador del campo en edición, se pausó el temporizador y se detuvieron las animaciones.</string>
+
+    <!-- Validación -->
+    <string name="error_requerido">Este campo es obligatorio</string>
+    <string name="error_correo">Ingrese un correo válido, p. ej. nombre@dominio.com</string>
+    <string name="error_telefono">Ingrese entre 7 y 15 dígitos</string>
+    <string name="error_fecha">Use el formato dd/mm/aaaa con una fecha válida</string>
+    <string name="error_fecha_futura">La fecha no puede ser posterior a hoy</string>
+    <string name="error_fecha_fin">No puede ser anterior a la fecha de inicio</string>
+    <string name="error_anios">Ingrese un número entre 0 y 60</string>
+    <string name="aviso_revisar_paso">Complete los campos marcados en el paso %1$d</string>
+
+    <!-- Revisión y envío -->
+    <string name="sin_dato">—</string>
+    <string name="actualidad">Actualidad</string>
+    <string name="enviado_titulo">Postulación enviada</string>
+    <string name="enviado_detalle">Su postulación se registró correctamente. Este envío es una simulación: no se conectó con ningún servidor.</string>
+    <string name="nueva_postulacion">Nueva postulación</string>
+
+    <!-- Ciclo de vida -->
+    <string name="estado_restaurado">Estado restaurado · paso %1$d de %2$d · %3$s · %4$s</string>
+    <plurals name="campos_con_datos">
+        <item quantity="one">%d campo con datos</item>
+        <item quantity="many">%d campos con datos</item>
+        <item quantity="other">%d campos con datos</item>
+    </plurals>
+</resources>

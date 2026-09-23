@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout style="@style/Formulario.ContenedorPaso">
+
+        <TextView
+            style="@style/Formulario.TituloPaso"
+            android:text="@string/titulo_paso_revision" />
+
+        <TextView
+            style="@style/Formulario.DescripcionPaso"
+            android:text="@string/desc_paso_revision" />
+
+        <!-- Confirmación de envío (simulado) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEnviado"
+            style="?attr/materialCardViewOutlinedStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/vidrio_tenue"
+            app:cardCornerRadius="20dp"
+            app:strokeColor="@color/blanco_borde">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="12dp"
+                    android:gravity="center_vertical"
+                    android:text="@string/enviado_titulo"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textColor="?attr/colorOnSurface"
+                    app:drawableStartCompat="@drawable/ic_check_circle"
+                    app:drawableTint="?attr/colorOnSurface" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/enviado_detalle"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnNuevaPostulacion"
+                    style="@style/Widget.Formulario.BotonPrincipal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/nueva_postulacion"
+                    app:icon="@drawable/ic_replay" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <include
+            android:id="@+id/seccionPersonal"
+            layout="@layout/item_seccion_resumen" />
+
+        <include
+            android:id="@+id/seccionProfesional"
+            layout="@layout/item_seccion_resumen" />
+
+        <include
+            android:id="@+id/seccionExperiencia"
+            layout="@layout/item_seccion_resumen" />
+
+        <include
+            android:id="@+id/seccionMotivacion"
+            layout="@layout/item_seccion_resumen" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

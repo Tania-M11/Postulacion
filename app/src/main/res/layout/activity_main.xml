@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Video de montañas a pantalla completa (también detrás de las barras del sistema),
+     un velo que mejora la lectura y encima el contenido en paneles de vidrio. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/ivFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fondo" />
+
+    <!-- Video en bucle y sin sonido (FondoVideo). Mientras carga se ve el primer cuadro de abajo. -->
+    <TextureView
+        android:id="@+id/videoFondo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/velo_fondo" />
+
+    <!-- Contenido. Es enfocable para que, al cambiar de paso, el foco salga del campo
+         sin saltar automáticamente a otro EditText. Los insets se aplican aquí. -->
+    <LinearLayout
+        android:id="@+id/contenido"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical">
+
+        <!-- Encabezado: título, paso actual, progreso y temporizador -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:accessibilityHeading="true"
+                android:gravity="center_horizontal"
+                tools:targetApi="p"
+                android:text="@string/titulo_app"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvPaso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnSurface"
+                    tools:text="Paso 2 de 5" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    android:importantForAccessibility="no"
+                    android:text="·"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/tvNombrePaso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:textAppearance="@style/TextAppearance.Formulario.Secundario"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    tools:text="Perfil profesional" />
+            </LinearLayout>
+
+            <com.google.android.material.progressindicator.LinearProgressIndicator
+                android:id="@+id/progreso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginTop="10dp"
+                android:max="5"
+                app:indicatorColor="@color/blanco"
+                app:trackColor="@color/blanco_pista"
+                app:trackCornerRadius="3dp"
+                app:trackThickness="6dp"
+                tools:progress="2" />
+
+            <!-- Temporizador: al apagar el switch se abre PausaActivity -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/vidrio_pastilla"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="20dp"
+                android:paddingTop="6dp"
+                android:paddingEnd="14dp"
+                android:paddingBottom="6dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_timer"
+                    app:tint="?attr/colorOnSurface" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvEtiquetaTemporizador"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="@style/TextAppearance.Formulario.BodySmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        tools:text="@string/tiempo_restante" />
+
+                    <TextView
+                        android:id="@+id/tvTemporizador"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFeatureSettings="tnum"
+                        android:textAppearance="@style/TextAppearance.Formulario.Temporizador"
+                        android:textColor="?attr/colorOnSurface"
+                        tools:text="19:42" />
+                </LinearLayout>
+
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/swTemporizador"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/temporizador" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Panel de vidrio con el paso actual. Solo uno es visible a la vez; los demás siguen
+             en memoria con lo que el usuario escribió, por eso volver atrás no pierde datos. -->
+        <FrameLayout
+            android:id="@+id/panelPasos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/vidrio_tarjeta">
+
+            <!-- Vidrio esmerilado: la ilustración desenfocada y alineada con el fondo
+                 (MainActivity.configurarEsmerilado), y encima el tinte y el borde. -->
+            <ImageView
+                android:id="@+id/ivFondoEsmerilado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:importantForAccessibility="no"
+                android:scaleType="matrix" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/vidrio_panel" />
+
+            <include
+                android:id="@+id/paso1"
+                layout="@layout/paso_personal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <include
+                android:id="@+id/paso2"
+                layout="@layout/paso_profesional"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/paso3"
+                layout="@layout/paso_experiencia"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/paso4"
+                layout="@layout/paso_motivacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
+            <include
+                android:id="@+id/paso5"
+                layout="@layout/paso_revision"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <!-- Navegación -->
+        <LinearLayout
+            android:id="@+id/barraNavegacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAnterior"
+                style="@style/Widget.Formulario.BotonSecundario"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/anterior"
+                app:icon="@drawable/ic_arrow_back" />
+
+            <Space
+                android:layout_width="12dp"
+                android:layout_height="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSiguiente"
+                style="@style/Widget.Formulario.BotonPrincipal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/siguiente"
+                app:icon="@drawable/ic_arrow_forward"
+                app:iconGravity="textEnd" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

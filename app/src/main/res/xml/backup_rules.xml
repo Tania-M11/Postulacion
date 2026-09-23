@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- La app no guarda datos en disco: su estado es temporal (Bundle del ciclo de vida). -->
+<full-backup-content />

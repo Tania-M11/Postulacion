@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout style="@style/Formulario.ContenedorPaso">
+
+        <TextView
+            style="@style/Formulario.TituloPaso"
+            android:text="@string/titulo_paso_motivacion" />
+
+        <TextView
+            style="@style/Formulario.DescripcionPaso"
+            android:text="@string/desc_paso_motivacion" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Formulario.CampoExtenso"
+            android:hint="@string/campo_motivo">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etMotivoEmpresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="@integer/max_texto_extenso"
+                android:minLines="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Formulario.CampoExtenso"
+            android:hint="@string/campo_aporte">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAporte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="@integer/max_texto_extenso"
+                android:minLines="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Formulario.CampoExtenso"
+            android:hint="@string/campo_objetivos">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etObjetivos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="top|start"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLength="@integer/max_texto_extenso"
+                android:minLines="5" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

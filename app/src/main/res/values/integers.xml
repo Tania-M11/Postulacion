@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Límite de los campos extensos: mantiene el Bundle muy por debajo del límite de ~1 MB de Binder. -->
+    <integer name="max_texto_extenso">1500</integer>
+</resources>

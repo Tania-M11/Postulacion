@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Tema oscuro fijo: toda la app se ve sobre la ilustración de montañas con paneles
+         de vidrio, texto blanco y botón principal blanco (como en la referencia). -->
+    <style name="Theme.Formulario" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/blanco</item>
+        <item name="colorOnPrimary">@color/indigo</item>
+        <item name="colorPrimaryContainer">@color/blanco_pista</item>
+        <item name="colorOnPrimaryContainer">@color/blanco</item>
+        <item name="colorSecondary">@color/lavanda</item>
+        <item name="colorOnSecondary">@color/indigo_profundo</item>
+        <item name="colorSecondaryContainer">@color/blanco_pista</item>
+        <item name="colorOnSecondaryContainer">@color/blanco</item>
+        <item name="colorSurface">@color/indigo_profundo</item>
+        <item name="colorSurfaceContainerHighest">@color/blanco_pista</item>
+        <item name="colorOnSurface">@color/blanco</item>
+        <item name="colorOnSurfaceVariant">@color/blanco_secundario</item>
+        <item name="colorOutline">@color/blanco_borde</item>
+        <item name="colorOutlineVariant">@color/blanco_borde_suave</item>
+        <item name="colorError">@color/error_claro</item>
+        <item name="colorOnError">@color/sobre_error</item>
+        <!-- Snackbar claro sobre el fondo oscuro -->
+        <item name="colorSurfaceInverse">@color/lavanda_clara</item>
+        <item name="colorOnSurfaceInverse">@color/indigo_profundo</item>
+        <item name="colorPrimaryInverse">@color/indigo_medio</item>
+        <item name="android:windowBackground">@color/indigo_profundo</item>
+
+        <!-- Tipografía Quicksand. Se define en cada textAppearance y no con fontFamily en el
+             tema: un fontFamily del tema taparía el peso (Bold, SemiBold, Light) de cada estilo. -->
+        <item name="textAppearanceHeadlineSmall">@style/TextAppearance.Formulario.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/TextAppearance.Formulario.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/TextAppearance.Formulario.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/TextAppearance.Formulario.TitleSmall</item>
+        <item name="textAppearanceLabelLarge">@style/TextAppearance.Formulario.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/TextAppearance.Formulario.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/TextAppearance.Formulario.LabelSmall</item>
+        <item name="textAppearanceBodyLarge">@style/TextAppearance.Formulario.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/TextAppearance.Formulario.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/TextAppearance.Formulario.BodySmall</item>
+    </style>
+
+    <!-- PausaActivity: ventana flotante y translúcida. Como la Activity de abajo
+         sigue visible, esta solo recibe onPause() (no onStop()). -->
+    <style name="Theme.Formulario.Dialogo">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@drawable/vidrio_dialogo</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.45</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowMinWidthMajor">60%</item>
+        <item name="android:windowMinWidthMinor">90%</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+
+    <!-- Calendario (DatePickerDialog del sistema): fondo claro con acento índigo. -->
+    <style name="Theme.Formulario.Calendario" parent="Theme.Material3.Light.Dialog">
+        <item name="colorPrimary">@color/indigo_medio</item>
+        <item name="colorOnPrimary">@color/blanco</item>
+        <item name="colorAccent">@color/indigo_medio</item>
+        <item name="android:colorAccent">@color/indigo_medio</item>
+        <item name="fontFamily">@font/quicksand_regular</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+    </style>
+
+    <!-- Tipografía: títulos Bold, subtítulos y etiquetas SemiBold, texto Regular, secundarios Light -->
+    <style name="TextAppearance.Formulario.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/quicksand_bold</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="fontFamily">@font/quicksand_bold</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="fontFamily">@font/quicksand_semibold</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="fontFamily">@font/quicksand_semibold</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="fontFamily">@font/quicksand_semibold</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="fontFamily">@font/quicksand_semibold</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="fontFamily">@font/quicksand_semibold</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="fontFamily">@font/quicksand_regular</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/quicksand_regular</item>
+        <item name="android:fontFamily">@font/quicksand_regular</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/quicksand_light</item>
+        <item name="android:fontFamily">@font/quicksand_light</item>
+    </style>
+
+    <!-- Placeholders, ayudas y textos secundarios -->
+    <style name="TextAppearance.Formulario.Secundario" parent="TextAppearance.Material3.BodyMedium">
+        <item name="fontFamily">@font/quicksand_light</item>
+        <item name="android:fontFamily">@font/quicksand_light</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.EtiquetaCampo" parent="TextAppearance.Material3.BodySmall">
+        <item name="fontFamily">@font/quicksand_semibold</item>
+        <item name="android:fontFamily">@font/quicksand_semibold</item>
+    </style>
+
+    <style name="TextAppearance.Formulario.Temporizador" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="fontFamily">@font/quicksand_bold</item>
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+    </style>
+
+    <!-- Campos: vidrio con borde blanco; los de una línea en forma de píldora -->
+    <style name="Widget.Formulario.Campo" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">14dp</item>
+        <item name="boxBackgroundColor">@color/blanco_campo</item>
+        <item name="boxCornerRadiusTopStart">28dp</item>
+        <item name="boxCornerRadiusTopEnd">28dp</item>
+        <item name="boxCornerRadiusBottomStart">28dp</item>
+        <item name="boxCornerRadiusBottomEnd">28dp</item>
+        <item name="boxStrokeColor">@color/borde_campo</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">2dp</item>
+        <item name="hintTextAppearance">@style/TextAppearance.Formulario.EtiquetaCampo</item>
+        <item name="placeholderTextAppearance">@style/TextAppearance.Formulario.Secundario</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.Formulario.BodySmall</item>
+        <item name="counterTextAppearance">@style/TextAppearance.Formulario.BodySmall</item>
+        <item name="errorTextAppearance">@style/TextAppearance.Formulario.BodySmall</item>
+    </style>
+
+    <style name="Widget.Formulario.CampoFecha" parent="Widget.Formulario.Campo">
+        <item name="endIconMode">custom</item>
+        <item name="endIconDrawable">@drawable/ic_calendar</item>
+        <item name="endIconContentDescription">@string/abrir_calendario</item>
+        <item name="placeholderText">@string/formato_fecha</item>
+    </style>
+
+    <!-- Los textos extensos usan esquinas más discretas: una píldora de varias líneas se ve rara -->
+    <style name="Widget.Formulario.CampoExtenso" parent="Widget.Formulario.Campo">
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="counterEnabled">true</item>
+        <item name="counterMaxLength">@integer/max_texto_extenso</item>
+    </style>
+
+    <!-- Botones: principal blanco con texto índigo (como "Login"), secundario de vidrio -->
+    <style name="Widget.Formulario.BotonPrincipal" parent="Widget.Material3.Button.Icon">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Formulario.LabelLarge</item>
+    </style>
+
+    <style name="Widget.Formulario.BotonSecundario" parent="Widget.Material3.Button.OutlinedButton.Icon">
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Formulario.LabelLarge</item>
+        <item name="backgroundTint">@color/vidrio_tenue</item>
+        <item name="strokeColor">@color/blanco_borde</item>
+    </style>
+
+    <!-- Encabezado de cada paso -->
+    <style name="Formulario.TituloPaso" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAppearance">?attr/textAppearanceHeadlineSmall</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+    </style>
+
+    <style name="Formulario.DescripcionPaso" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">6dp</item>
+        <item name="android:textAppearance">@style/TextAppearance.Formulario.Secundario</item>
+        <item name="android:textColor">?attr/colorOnSurfaceVariant</item>
+    </style>
+
+    <style name="Formulario.ContenedorPaso" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+    </style>
+</resources>

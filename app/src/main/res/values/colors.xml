@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Paleta tomada del fondo de montañas. La app siempre se ve sobre la ilustración,
+     por eso no hay variante nocturna: el texto es blanco sobre vidrio oscuro. -->
+<resources>
+    <color name="blanco">#FFFFFF</color>
+    <color name="blanco_secundario">#DEFFFFFF</color>
+    <color name="blanco_borde">#8CFFFFFF</color>
+    <color name="blanco_borde_suave">#40FFFFFF</color>
+    <color name="blanco_campo">#1FFFFFFF</color>
+    <color name="blanco_borde_campo">#B3FFFFFF</color>
+    <color name="blanco_pista">#33FFFFFF</color>
+
+    <color name="indigo">#3B2F9E</color>
+    <color name="indigo_medio">#5B4BD6</color>
+    <color name="indigo_profundo">#1E1A4F</color>
+    <color name="lavanda">#D6D0FF</color>
+    <color name="lavanda_clara">#F3F0FF</color>
+
+    <!-- Velo sobre el video: sus tonos son claros, así que oscurece lo justo para leer texto blanco -->
+    <color name="velo_arriba">#661E1A4F</color>
+    <color name="velo_centro">#731E1A4F</color>
+    <color name="velo_abajo">#4D1E1A4F</color>
+
+    <!-- Vidrio: relleno índigo translúcido con borde blanco. El del panel va sobre la
+         ilustración desenfocada, por eso puede ser algo más oscuro sin perder transparencia. -->
+    <color name="vidrio">#592B2470</color>
+    <color name="vidrio_panel">#802B2470</color>
+    <color name="vidrio_denso">#EB2B2470</color>
+    <color name="vidrio_tenue">#26FFFFFF</color>
+
+    <color name="error_claro">#FFB4C4</color>
+    <color name="sobre_error">#5C0A22</color>
+</resources>
